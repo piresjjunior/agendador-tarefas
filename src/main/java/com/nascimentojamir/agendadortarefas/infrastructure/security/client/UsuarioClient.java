@@ -1,4 +1,4 @@
-package com.nascimentojamir.agendadortarefas.infrastructure.client;
+package com.nascimentojamir.agendadortarefas.infrastructure.security.client;
 
 
 import com.nascimentojamir.agendadortarefas.business.dto.UsuarioDTO;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "usuario", url = "${usuario.url}")
 public interface UsuarioClient {
 
-    @GetMapping
+    @GetMapping("/usuario")
     UsuarioDTO buscarUsuarioPorEmail(@RequestParam("email") String email,
                                      @RequestHeader("Authorization") String token);
 }
